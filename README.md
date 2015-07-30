@@ -1,6 +1,9 @@
 # Twitch-HTML5-Player-UI-Replacer-for-Chrome
 This is just a terribly ghetto-rigged extension for Chrome that shouldn't really be used at all, but at least it works... right?  
 If you have no idea what this is, read about this: [http://blog.twitch.tv/2015/07/video-player-controls-now-in-html/](http://blog.twitch.tv/2015/07/video-player-controls-now-in-html/).  
+
+# Chrome web store
+This extension is now on the Chrome web store, which you can find by [clicking here](https://chrome.google.com/webstore/detail/twitch-html5-player-ui-re/fflbablkanbikdlamlmmlajlkkhfgdon).
   
 # Install notes
 1. Download this and extract it so you have a "Twitch HTML5 Player UI Replacer.crx" file.
