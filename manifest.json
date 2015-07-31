@@ -3,7 +3,11 @@
 
     "name": "Twitch HTML5 Player UI Replacer",
     "description": "This extension replaces the Twitch player on the channel page with the new HTML5 player UI on load.",
-    "version": "1.0.1",
+    "version": "1.0.2",
+    "background": {
+        "scripts": [ "background.js" ],
+        "persistent": false
+    },
     "browser_action": {
         "default_icon": "48x48.png"
     },
@@ -12,7 +16,10 @@
         "48": "48x48.png",
         "128": "128x128.png"
     },
-    "permissions": [ "activeTab" ],
+    "permissions": [
+        "activeTab",
+        "http://www.twitch.tv/*"
+    ],
     "content_scripts": [ {
         "matches": [ "http://www.twitch.tv/*", "http://www.twitch.tv/*/dashboard" ],
         "exclude_matches": [ "http://www.twitch.tv/*/*/*" ],
