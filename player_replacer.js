@@ -1,5 +1,4 @@
 function replacePlayer() {
-    console.log( "** HTML5 Twitch Player Replacer - Executed" );
     var path = window.location.pathname.split( '/' );
     var channel = path[ 1 ];
     var optional = path[ 2 ]; // Secondary parameter, specifically to replace it in the dashboard.
@@ -12,7 +11,19 @@ function replacePlayer() {
 }
 
 $( window ).load( function() {
-    replacePlayer();
+    setTimeout( function() { // Without a slight delay, it sometimes doesn't replace the player.
+        replacePlayer();
+    }, 500 );
+
+    var exitTheaterBtn = '<div class="exit-theatre" id="exit-theatre"><a>Exit Theater Mode</a></div>';
+    $( document ).on( 'click', '.theatre-button', function( e ) {
+        $( '.js-player iframe' ).before( exitTheaterBtn );
+    } );
+
+    $( document ).on( 'click', '.exit-theatre', function( e ) {
+        App.__container__.lookup('controller:channel').send('toggleTheatre');
+        $( '.exit-theatre' ).remove();
+    } );
 } );
 
 chrome.runtime.onMessage.addListener( function( request, sender, callback ) {
