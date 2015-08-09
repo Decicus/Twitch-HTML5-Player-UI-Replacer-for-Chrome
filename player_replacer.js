@@ -10,7 +10,7 @@ function replacePlayer() {
     }
 }
 
-$( window ).load( function() {
+$( document ).ready( function() {
     setTimeout( function() { // Without a slight delay, it sometimes doesn't replace the player.
         replacePlayer();
     }, 500 );
