@@ -6,7 +6,7 @@ function replacePlayer() {
     if( optional == "dashboard" ) {
         $( '.live_site_player_container' ).html( playerFrame );
     } else if( optional === undefined ) {
-        $( ".js-player" ).html( playerFrame );
+        $( "#player" ).html( playerFrame );
     }
 }
 
