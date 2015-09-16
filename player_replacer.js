@@ -13,7 +13,7 @@ function replacePlayer() {
 $( document ).ready( function() {
     setTimeout( function() { // Without a slight delay, it sometimes doesn't replace the player.
         replacePlayer();
-    }, 500 );
+    }, 5000 );
 
     var exitTheaterBtn = '<div class="exit-theatre" id="exit-theatre"><a>Exit Theater Mode</a></div>';
     $( document ).on( 'click', '.theatre-button', function( e ) {
@@ -24,10 +24,4 @@ $( document ).ready( function() {
         App.__container__.lookup('controller:channel').send('toggleTheatre');
         $( '.exit-theatre' ).remove();
     } );
-} );
-
-chrome.runtime.onMessage.addListener( function( request, sender, callback ) {
-    if( request == "replacePlayer" ) {
-        replacePlayer();
-    }
 } );
